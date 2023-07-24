@@ -74,13 +74,13 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Session('nama') }}Sari</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{ Session('nama') }}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>{{ Session('nama') }}Sari</h6>
-                            <span>{{ Session('jabatan') }}Admin</span>
+                            <h6>{{ Session('nama') }}</h6>
+                            <span>{{ Session('jabatan') }}</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">

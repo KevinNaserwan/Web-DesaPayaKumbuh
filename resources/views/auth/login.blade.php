@@ -79,10 +79,11 @@
                                     <form class="row g-3" action="/loginProcess" method="">
                                         @csrf
                                         <div class="col-12">
-                                            <label for="id_pos" class="form-label">Username</label>
+                                            <label for="email" class="form-label">Username</label>
                                             <div class="input-group has-validation">
                                                 <span class="input-group-text" id="inputGroupPrepend">Id</span>
-                                                <input type="text" name="id_pos" class="form-control" id="id_pos">
+                                                <input type="text" name="email" class="form-control"
+                                                    id="email">
                                                 <div class="invalid-feedback">Harap masukan usename anda!</div>
                                             </div>
                                         </div>
@@ -94,8 +95,7 @@
                                             <div class="invalid-feedback">Harap masukan password anda!</div>
                                         </div>
                                         <div class="col-12">
-                                                <button class="btn btn-primary w-100"
-                                                type="submit">Masuk</button>
+                                            <button class="btn btn-primary w-100" type="submit">Masuk</button>
                                         </div>
                                         {{-- <div class="col-12">
                       <p class="small mb-0">Belum memiliki akaun? <a href="pages-register.html">Buat akun</a></p>

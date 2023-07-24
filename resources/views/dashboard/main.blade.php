@@ -4,58 +4,122 @@
     <aside id="sidebar" class="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
+            @if (Session('role') == 1)
+                <li class="nav-item">
+                    <a class="nav-link " href="/dashboard">
+                        <i class="bi bi-grid"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
+                    </a>
+                </li><!-- End Charts Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link " href="/dashboard">
-                    <i class="bi bi-grid"></i>
-                    <span>Beranda</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="pages-contact.html">
+                        <i class="bi bi-envelope"></i>
+                        <span>Administrasi</span>
+                    </a>
+                </li><!-- End Contact Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="/absensi">
-                    <i class="bi bi-card-list"></i>
-                    <span>Daftar Absensi</span>
-                </a>
-            </li><!-- End Register Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="/arsip">
+                                <i class="bi bi-circle"></i><span>Arsip Dokumen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/unggah">
+                                <i class="bi bi-circle"></i><span>Unggah Dokumen</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- End Components Nav -->
+            @elseif (Session('role') == 2)
+                <li class="nav-item">
+                    <a class="nav-link " href="/dashboard">
+                        <i class="bi bi-grid"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
-                    <i class="bi bi-person"></i>
-                    <span>Daftar Warga</span>
-                </a>
-            </li><!-- End Profile Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="/absensi">
+                        <i class="bi bi-card-list"></i>
+                        <span>Daftar Absensi</span>
+                    </a>
+                </li><!-- End Register Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
+                    </a>
+                </li><!-- End Charts Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
-                </a>
-            </li><!-- End Charts Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="pages-contact.html">
+                        <i class="bi bi-envelope"></i>
+                        <span>Administrasi</span>
+                    </a>
+                </li><!-- End Contact Page Nav -->
+            @elseif (Session('role') == 0)
+                <li class="nav-item">
+                    <a class="nav-link " href="/dashboard">
+                        <i class="bi bi-grid"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-contact.html">
-                    <i class="bi bi-envelope"></i>
-                    <span>Administrasi</span>
-                </a>
-            </li><!-- End Contact Page Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="/absensi">
+                        <i class="bi bi-card-list"></i>
+                        <span>Daftar Absensi</span>
+                    </a>
+                </li><!-- End Register Page Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="/arsip">
-                            <i class="bi bi-circle"></i><span>Arsip Dokumen</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/unggah">
-                            <i class="bi bi-circle"></i><span>Unggah Dokumen</span>
-                        </a>
-                    </li>
-                </ul>
-            </li><!-- End Components Nav -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="users-profile.html">
+                        <i class="bi bi-person"></i>
+                        <span>Daftar Warga</span>
+                    </a>
+                </li><!-- End Profile Page Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
+                    </a>
+                </li><!-- End Charts Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="pages-contact.html">
+                        <i class="bi bi-envelope"></i>
+                        <span>Administrasi</span>
+                    </a>
+                </li><!-- End Contact Page Nav -->
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                        <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
+                    </a>
+                    <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                        <li>
+                            <a href="/arsip">
+                                <i class="bi bi-circle"></i><span>Arsip Dokumen</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/unggah">
+                                <i class="bi bi-circle"></i><span>Unggah Dokumen</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li><!-- End Components Nav -->
+            @endif
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -79,7 +143,7 @@
                         Anda masuk sebagai <span
                             style="display: inline-block; padding: 5px 10px;
                         background-color: blue; color: #fff; font-weight: bold; border-radius: 4px;"
-                            class="badge">{{ Session('jabatan') }}admin</span>
+                            class="badge">{{ Session('jabatan') }}</span>
                     </p>
                 </div>
                 <div>
@@ -88,8 +152,11 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Absensi</h5>
-                                    <p>Lakukan Absensi Sebelum Pukul 09.00 WIB!</p>
-
+                                    @if ($currentTime > '05:00:00')
+                                        <p>Waktu Untuk Absen Sudah Berlalu</p>
+                                    @else
+                                        <p>Lakukan Absensi Sebelum Pukul 09.00 WIB!</p>
+                                    @endif
                                     <!-- Basic Modal -->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#basicModal">
@@ -103,17 +170,24 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    Harap Melakukan Absensi Sebelum Pukul 09.00 WIB
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <a href="/masuk">
-                                                        <button type="button" class="btn btn-success">Masuk</button>
-                                                    </a>
-                                                    <a href="/izin">
-                                                        <button type="button" class="btn btn-danger">Tidak Masuk</button>
-                                                    </a>
-                                                </div>
+                                                @if ($currentTime > '05:00:00')
+                                                    <div class="modal-body">
+                                                        Waktu Untuk Absen Sudah Berlalu
+                                                    </div>
+                                                @else
+                                                    <div class="modal-body">
+                                                        Harap Melakukan Absensi Sebelum Pukul 09.00 WIB
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="/absenproses">
+                                                            <button type="button" class="btn btn-success">Masuk</button>
+                                                        </a>
+                                                        <a href="/izin">
+                                                            <button type="button" class="btn btn-danger">Tidak
+                                                                Masuk</button>
+                                                        </a>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div><!-- End Basic Modal-->

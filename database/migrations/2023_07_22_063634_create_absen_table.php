@@ -10,14 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('file', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama', 50);
-            $table->string('nama_dokumen', 50);
-            $table->timestamp('tanggal');
-            $table->integer('tujuan');
+        Schema::create('absen', function (Blueprint $table) {
             $table->integer('status');
-            $table->string('keterangan', 255);
+            $table->string('email', 50);
+            $table->foreign('email')->references('email')->on('user');
         });
     }
 
@@ -26,6 +22,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('file');
+        Schema::dropIfExists('absen');
     }
 };

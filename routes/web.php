@@ -25,6 +25,9 @@ Route::get('/', function () {
 // route login
 Route::get('/loginProcess', [AuthController::class, 'loginProcess']);
 
+//route logout
+Route::get('/logout', [AuthController::class, 'logout']);
+
 // route dashboard
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/izin', [DashboardController::class, 'izin']);
@@ -32,9 +35,8 @@ Route::get('/izin', [DashboardController::class, 'izin']);
 //route document
 Route::get('/arsip', [DocumentController::class, 'arsip']);
 Route::get('/unggah', [DocumentController::class, 'unggah']);
+Route::post('/unggahproses', [DocumentController::class, 'unggahproses']);
 
 //route absensi
 Route::get('/absensi', [AbsensiController::class, 'index']);
-
-
-
+Route::post('/absenproses', [DashboardController::class, 'absen']);
