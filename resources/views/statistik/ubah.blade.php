@@ -12,10 +12,11 @@
                     </a>
                 </li><!-- End Dashboard Nav -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="#">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -48,7 +49,7 @@
                     </a>
                 </li><!-- End Register Page Nav -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="#">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
@@ -66,17 +67,14 @@
                         <span>Daftar Absensi</span>
                     </a>
                 </li><!-- End Register Page Nav -->
+
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="users-profile.html">
-                        <i class="bi bi-person"></i>
-                        <span>Daftar Warga</span>
-                    </a>
-                </li><!-- End Profile Page Nav -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="#">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
+
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -114,48 +112,63 @@
         <section class="section dashboard">
             <div class="row">
                 <div class="User Greetings">
-                    <p>Selamat datang, <span id="nama user"><strong>{{ Session('nama') }}Sari</strong></span>
+                    <p>Selamat datang, <span id="nama user"><strong>{{ Session('nama') }}</strong></span>
                         Anda masuk sebagai <span
                             style="display: inline-block; padding: 5px 10px;
                         background-color: blue; color: #fff; font-weight: bold; border-radius: 4px;"
-                            class="badge">{{ Session('jabatan') }}admin</span>
+                            class="badge">{{ Session('jabatan') }}</span>
                     </p>
                 </div>
 
                 <!-- Left side columns -->
                 <div>
                     <div class="row">
+
+
+
+
                         <!-- Recent Sales -->
                         <div class="col-12">
                             <div class="card recent-sales overflow-auto">
 
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Bukti Surat Sakit Dokter</h5>
-
-                                        @if (Session::has('file_path'))
-                                            <div class="preview-file">
-                                                <p>File yang baru dimasukkan:</p>
-                                                <iframe src="{{ Session::get('file_path') }}" width="100%"
-                                                    height="500"></iframe>
-                                            </div>
-                                        @endif
+                                        <h5 class="card-title">Edit Statistik Desa</h5>
                                         <form method="POST" action="/unggahproses" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row mb-3">
-                                                <label for="inputText" class="col-sm-2 col-form-label">Lampiran</label>
+                                                <label for="inputText" class="col-sm-2 col-form-label">Nama Dusun</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" value="" name="file_pdf"
-                                                        class="form-control" id="file_pdf" required>
+                                                    <input type="text" value="" name="nama_dusun"
+                                                        class="form-control" id="nama_dusun" required>
                                                 </div>
                                             </div>
-
                                             <div class="row mb-3">
-                                                <label for="inputText" class="col-sm-2 col-form-label">Keterangan</label>
+                                                <label for="inputText" class="col-sm-2 col-form-label">Jumlah KK</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" value="" name="keterangan"
-                                                        class="form-control" id="keterangan"
-                                                        placeholder="Masukkan Teks...." required>
+                                                    <input type="text" value="" name="kk"
+                                                        class="form-control" id="kk" required>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-2 col-form-label">Jumlah LK</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" value="" name="LK"
+                                                        class="form-control" id="LK" required>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-2 col-form-label">Jumlah PR</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" value="" name="PR"
+                                                        class="form-control" id="PR" required>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="inputText" class="col-sm-2 col-form-label">Jumlah</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" value="" name="jumlah"
+                                                        class="form-control" id="jumlah" required>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">

@@ -4,6 +4,7 @@ use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\StatistikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,6 @@ Route::post('/unggahproses', [DocumentController::class, 'unggahproses']);
 //route absensi
 Route::get('/absensi', [AbsensiController::class, 'index']);
 Route::post('/absenproses', [DashboardController::class, 'absen']);
+
+Route::get('/statistik', [StatistikController::class, 'index']);
+Route::get('/ubah-statistik', [StatistikController::class, 'ubah']);

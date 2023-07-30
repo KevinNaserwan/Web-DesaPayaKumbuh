@@ -12,10 +12,11 @@
                     </a>
                 </li><!-- End Dashboard Nav -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="/statistik">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -48,7 +49,7 @@
                     </a>
                 </li><!-- End Register Page Nav -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="/statisik">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
@@ -66,17 +67,13 @@
                         <span>Daftar Absensi</span>
                     </a>
                 </li><!-- End Register Page Nav -->
+
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="users-profile.html">
-                        <i class="bi bi-person"></i>
-                        <span>Daftar Warga</span>
-                    </a>
-                </li><!-- End Profile Page Nav -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="/statistik">
+                    <a class="nav-link collapsed" href="/statistik">
                         <i class="bi bi-bar-chart"></i><span>Statistik Kependudukan</span>
                     </a>
                 </li><!-- End Charts Nav -->
+
                 <li class="nav-item">
                     <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-menu-button-wide"></i><span>Dokumen</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -114,71 +111,86 @@
         <section class="section dashboard">
             <div class="row">
                 <div class="User Greetings">
-                    <p>Selamat datang, <span id="nama user"><strong>{{ Session('nama') }}Sari</strong></span>
+                    <p>Selamat datang, <span id="nama user"><strong>{{ Session('nama') }}</strong></span>
                         Anda masuk sebagai <span
                             style="display: inline-block; padding: 5px 10px;
                         background-color: blue; color: #fff; font-weight: bold; border-radius: 4px;"
-                            class="badge">{{ Session('jabatan') }}admin</span>
+                            class="badge">{{ Session('jabatan') }}</span>
                     </p>
                 </div>
-
-                <!-- Left side columns -->
                 <div>
                     <div class="row">
-                        <!-- Recent Sales -->
+                        <!-- List Jabatan Periode -->
                         <div class="col-12">
-                            <div class="card recent-sales overflow-auto">
+                            <div class="card top-selling overflow-auto">
+                                <div class="card-body pb-0">
+                                    <h5 class="card-title">Statistik Desa <span>| Peridode 2023</span></h5>
 
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Bukti Surat Sakit Dokter</h5>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nomor</th>
+                                                <th scope="col">Nama Dusun</th>
+                                                <th scope="col">Jumlah KK</th>
+                                                <th scope="col">LK</th>
+                                                <th scope="col">PR</th>
+                                                <th scope="col">Jumlah</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold" style="text-align: center">1</td>
+                                                <td>Dusun 1</td>
+                                                <td>229</td>
+                                                <td>337</td>
+                                                <td>375</td>
+                                                <td>705</td>
+                                                <td>
+                                                    <a href="/ubah-statistik" class="btn btn-sm btn-success">Ubah</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold" style="text-align: center">2</td>
+                                                <td>Dusun 2</td>
+                                                <td>229</td>
+                                                <td>337</td>
+                                                <td>375</td>
+                                                <td>705</td>
+                                                <td>
+                                                    <a href="/ubah-statistik" class="btn btn-sm btn-success">Ubah</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold" style="text-align: center">3</td>
+                                                <td>Dusun 3</td>
+                                                <td>229</td>
+                                                <td>337</td>
+                                                <td>375</td>
+                                                <td>705</td>
+                                                <td>
+                                                    <a href="/ubah-statistik" class="btn btn-sm btn-success">Ubah</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold" style="text-align: center"></td>
+                                                <td style="font-weight: bold">Jumlah</td>
+                                                <td style="font-weight: bold">818</td>
+                                                <td style="font-weight: bold">1275</td>
+                                                <td style="font-weight: bold">1365</td>
+                                                <td style="font-weight: bold">2640</td>
+                                            </tr>
 
-                                        @if (Session::has('file_path'))
-                                            <div class="preview-file">
-                                                <p>File yang baru dimasukkan:</p>
-                                                <iframe src="{{ Session::get('file_path') }}" width="100%"
-                                                    height="500"></iframe>
-                                            </div>
-                                        @endif
-                                        <form method="POST" action="/unggahproses" enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="row mb-3">
-                                                <label for="inputText" class="col-sm-2 col-form-label">Lampiran</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" value="" name="file_pdf"
-                                                        class="form-control" id="file_pdf" required>
-                                                </div>
-                                            </div>
+                                        </tbody>
+                                    </table>
 
-                                            <div class="row mb-3">
-                                                <label for="inputText" class="col-sm-2 col-form-label">Keterangan</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" value="" name="keterangan"
-                                                        class="form-control" id="keterangan"
-                                                        placeholder="Masukkan Teks...." required>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <label class="col-sm-2 col-form-label"></label>
-                                                <div class="col-sm-10">
-                                                    <button type="submit" class="btn btn-primary">Unggah</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
 
                             </div>
-                        </div><!-- End Recent Sales -->
-
-
+                        </div>
+                        <!-- End Top Selling -->
                     </div>
-                </div>
-
-
-
-            </div>
         </section>
 
-    </main><!-- End #main -->
+    </main><!-- End main -->
 @endsection
